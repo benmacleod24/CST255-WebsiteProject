@@ -463,3 +463,585 @@ button:focus-visible {
 	outline: 2px solid var(--color-primary);
 	outline-offset: 2px;
 }
+/* ============================================================================
+   TRAVEL DESTINATIONS WEBSITE - EXTERNAL STYLESHEET
+   ============================================================================
+ */
+
+/* ============================================================================
+   CSS VARIABLES - Design System Tokens
+   ============================================================================ 
+*/
+:root {
+	/* Colors */
+	--color-primary: #ff385c;
+	--color-primary-active: #e00b41;
+	--color-primary-disabled: #ffd1da;
+	--color-ink: #222222;
+	--color-body: #3f3f3f;
+	--color-muted: #6a6a6a;
+	--color-canvas: #ffffff;
+	--color-surface-soft: #f7f7f7;
+	--color-surface-strong: #f2f2f2;
+	--color-hairline: #dddddd;
+
+	/* Typography */
+	--font-family-base:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", sans-serif;
+	--font-size-display-xl: 28px;
+	--font-size-display-lg: 22px;
+	--font-size-display-md: 21px;
+	--font-size-display-sm: 20px;
+	--font-size-title-md: 16px;
+	--font-size-body-md: 16px;
+	--font-size-body-sm: 14px;
+	--font-weight-bold: 700;
+	--font-weight-semi-bold: 600;
+	--font-weight-medium: 500;
+	--font-weight-regular: 400;
+
+	/* Spacing */
+	--space-xxs: 2px;
+	--space-xs: 4px;
+	--space-sm: 8px;
+	--space-md: 12px;
+	--space-base: 16px;
+	--space-lg: 24px;
+	--space-xl: 32px;
+	--space-xxl: 48px;
+	--space-section: 64px;
+
+	/* Radius */
+	--radius-sm: 8px;
+	--radius-md: 14px;
+	--radius-lg: 20px;
+	--radius-full: 9999px;
+
+	/* Shadows */
+	--shadow-elevation-1:
+		rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 2px 6px 0,
+		rgba(0, 0, 0, 0.1) 0 4px 8px 0;
+}
+
+/* ============================================================================
+   RESET & BASE STYLES
+   ============================================================================ 
+*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: var(--font-family-base);
+	font-size: var(--font-size-body-md);
+	font-weight: var(--font-weight-regular);
+	line-height: 1.5;
+	color: var(--color-body);
+	background-color: var(--color-canvas);
+}
+
+/* ============================================================================
+   TYPOGRAPHY - Headings, Text, Links
+   ============================================================================ 
+*/
+h1 {
+	font-size: var(--font-size-display-xl);
+	font-weight: var(--font-weight-bold);
+	line-height: 1.43;
+	color: var(--color-ink);
+	margin-bottom: var(--space-lg);
+}
+
+h2 {
+	font-size: var(--font-size-display-md);
+	font-weight: var(--font-weight-bold);
+	line-height: 1.43;
+	color: var(--color-ink);
+	margin: var(--space-xxl) 0 var(--space-lg) 0;
+}
+
+h3 {
+	font-size: var(--font-size-title-md);
+	font-weight: var(--font-weight-semi-bold);
+	line-height: 1.25;
+	color: var(--color-ink);
+	margin: var(--space-lg) 0 var(--space-md) 0;
+}
+
+h4 {
+	font-size: var(--font-size-body-md);
+	font-weight: var(--font-weight-semi-bold);
+	line-height: 1.5;
+	color: var(--color-ink);
+	margin: var(--space-lg) 0 var(--space-base) 0;
+}
+
+p {
+	margin-bottom: var(--space-base);
+	color: var(--color-body);
+	line-height: 1.6;
+}
+
+a {
+	color: var(--color-primary);
+	text-decoration: none;
+	font-weight: var(--font-weight-medium);
+	transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+	color: var(--color-primary-active);
+	text-decoration: underline;
+}
+
+strong {
+	font-weight: var(--font-weight-semi-bold);
+	color: var(--color-ink);
+}
+
+em {
+	font-style: italic;
+	color: var(--color-muted);
+}
+
+/* ============================================================================
+   PAGE LAYOUT & STRUCTURE
+   ============================================================================ 
+*/
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+header {
+	background-color: var(--color-canvas);
+	border-bottom: 1px solid var(--color-hairline);
+	padding: var(--space-xxl) var(--space-lg);
+	box-shadow: var(--shadow-elevation-1);
+}
+
+header h1 {
+	max-width: 1280px;
+	margin: 0 auto;
+	margin-bottom: 0;
+}
+
+nav {
+	background-color: var(--color-canvas);
+	padding: var(--space-base) var(--space-lg);
+	border-bottom: 1px solid var(--color-hairline);
+	display: flex;
+	justify-content: center;
+	gap: var(--space-xxl);
+	flex-wrap: wrap;
+}
+
+nav a {
+	font-size: var(--font-size-body-md);
+	font-weight: var(--font-weight-semi-bold);
+	color: var(--color-ink);
+	padding: var(--space-base) var(--space-lg);
+	border-radius: var(--radius-sm);
+	transition: background-color 0.2s ease-in-out;
+}
+
+nav a:hover {
+	background-color: var(--color-surface-soft);
+	text-decoration: none;
+}
+
+main {
+	flex: 1;
+	max-width: 1280px;
+	width: 100%;
+	margin: 0 auto;
+	padding: var(--space-xxl) var(--space-lg);
+}
+
+footer {
+	background-color: var(--color-canvas);
+	border-top: 1px solid var(--color-hairline);
+	padding: var(--space-xl) var(--space-lg);
+	text-align: center;
+	margin-top: auto;
+}
+
+footer p {
+	max-width: 1280px;
+	width: 100%;
+	margin: 0 auto;
+	color: var(--color-muted);
+	font-size: var(--font-size-body-sm);
+}
+
+/* ============================================================================
+   SECTION STYLING & SPACING
+   ============================================================================
+*/
+main > section {
+	margin-bottom: var(--space-section);
+}
+
+.hero {
+	margin-bottom: var(--space-section);
+	padding-bottom: var(--space-lg);
+	border-bottom: 1px solid var(--color-hairline);
+}
+
+.hero h2 {
+	margin-top: 0;
+}
+
+.featured-section {
+	margin-bottom: var(--space-section);
+}
+
+.cta-section {
+	background-color: var(--color-surface-soft);
+	padding: var(--space-xl) var(--space-lg);
+	border-radius: var(--radius-md);
+	border-left: 4px solid var(--color-primary);
+	margin-bottom: var(--space-section);
+}
+
+.cta-section p {
+	margin-bottom: 0;
+}
+
+/* ============================================================================
+   FEATURED DESTINATIONS GRID (Homepage)
+   ============================================================================
+*/
+.featured-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: var(--space-xl);
+	margin: var(--space-xl) 0 0 0;
+}
+
+.featured-card {
+	background-color: var(--color-surface-soft);
+	border-radius: var(--radius-md);
+	padding: var(--space-lg);
+	border: 1px solid var(--color-hairline);
+	transition:
+		box-shadow 0.3s ease-in-out,
+		transform 0.3s ease-in-out;
+	display: flex;
+	flex-direction: column;
+}
+
+.featured-card:hover {
+	box-shadow: var(--shadow-elevation-1);
+	transform: translateY(-4px);
+}
+
+.featured-card h3 {
+	margin-top: 0;
+	margin-bottom: var(--space-md);
+	color: var(--color-ink);
+}
+
+.featured-card p {
+	flex-grow: 1;
+	margin-bottom: var(--space-md);
+}
+
+.featured-card p:last-child {
+	margin-bottom: 0;
+}
+
+.card-link {
+	display: inline-block;
+	margin-top: var(--space-md);
+	font-weight: var(--font-weight-semi-bold);
+}
+
+/* ============================================================================
+   ABOUT PAGE SECTIONS
+   ============================================================================
+*/
+.intro-section {
+	margin-bottom: var(--space-section);
+	padding-bottom: var(--space-lg);
+	border-bottom: 1px solid var(--color-hairline);
+}
+
+.intro-section h2 {
+	margin-top: 0;
+}
+
+.philosophy-section {
+	margin-bottom: var(--space-section);
+}
+
+.philosophy-section h2 {
+	margin-bottom: var(--space-xl);
+}
+
+.about-section {
+	background-color: var(--color-surface-soft);
+	padding: var(--space-lg);
+	margin: 0 0 var(--space-xl) 0;
+	border-radius: var(--radius-md);
+	border-left: 4px solid var(--color-primary);
+}
+
+.about-section:last-child {
+	margin-bottom: 0;
+}
+
+.about-section h3 {
+	margin-top: 0;
+	margin-bottom: var(--space-md);
+	color: var(--color-primary);
+}
+
+.about-section ul {
+	margin: var(--space-base) 0 var(--space-base) var(--space-xl);
+}
+
+.about-section li {
+	margin-bottom: var(--space-md);
+	line-height: 1.6;
+	color: var(--color-body);
+}
+
+/* ============================================================================
+   DESTINATION PAGE LAYOUT
+   ============================================================================
+*/
+.destinations-intro {
+	margin-bottom: var(--space-section);
+	padding-bottom: var(--space-lg);
+	border-bottom: 1px solid var(--color-hairline);
+}
+
+.destinations-intro h2 {
+	margin-top: 0;
+}
+
+.destinations-list {
+	display: flex;
+	flex-direction: column;
+}
+
+/* ============================================================================
+   DESTINATION CARDS (Destinations Page)
+   ============================================================================
+*/
+.destination {
+	margin: 0 0 var(--space-section) 0;
+	padding: 0 0 var(--space-xxl) 0;
+	border-bottom: 1px solid var(--color-hairline);
+}
+
+.destination:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+}
+
+.destination h3 {
+	margin-top: 0;
+	margin-bottom: var(--space-lg);
+}
+
+.destination img {
+	width: 100%;
+	max-width: 600px;
+	height: auto;
+	border-radius: var(--radius-md);
+	margin: var(--space-lg) 0;
+	box-shadow: var(--shadow-elevation-1);
+	display: block;
+}
+
+.destination-info {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--space-xl);
+	background-color: var(--color-surface-strong);
+	padding: var(--space-lg);
+	border-radius: var(--radius-md);
+	margin: var(--space-lg) 0;
+}
+
+.destination-info p {
+	margin-bottom: var(--space-sm);
+	font-size: var(--font-size-body-sm);
+	line-height: 1.6;
+}
+
+.destination-info strong {
+	color: var(--color-ink);
+	display: inline-block;
+	min-width: 140px;
+}
+
+.attractions {
+	background-color: var(--color-surface-soft);
+	padding: var(--space-lg);
+	border-radius: var(--radius-md);
+	margin: var(--space-lg) 0;
+	border-left: 4px solid var(--color-primary);
+}
+
+.attractions h4 {
+	color: var(--color-primary);
+	margin-top: 0;
+}
+
+.attractions ol {
+	margin-left: var(--space-xl);
+	padding-left: 0;
+}
+
+.attractions li {
+	margin-bottom: var(--space-md);
+	line-height: 1.6;
+	color: var(--color-body);
+}
+
+/* ============================================================================
+   LISTS & SEPARATORS
+   ============================================================================ 
+*/
+ul,
+ol {
+	color: var(--color-body);
+}
+
+ul li,
+ol li {
+	margin-bottom: var(--space-md);
+}
+
+hr {
+	border: none;
+	border-top: 1px solid var(--color-hairline);
+	margin: var(--space-section) 0;
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN - Mobile & Tablet
+   ============================================================================ 
+*/
+@media (max-width: 768px) {
+	header {
+		padding: var(--space-lg) var(--space-base);
+	}
+
+	header h1 {
+		font-size: 24px;
+	}
+
+	nav {
+		gap: var(--space-lg);
+		padding: var(--space-sm) var(--space-base);
+	}
+
+	nav a {
+		padding: var(--space-sm) var(--space-md);
+		font-size: 14px;
+	}
+
+	main {
+		padding: var(--space-lg) var(--space-base);
+	}
+
+	h2 {
+		font-size: 20px;
+		margin: var(--space-lg) 0 var(--space-md) 0;
+	}
+
+	h3 {
+		font-size: 18px;
+	}
+
+	.destination-info {
+		grid-template-columns: 1fr;
+		gap: var(--space-lg);
+	}
+
+	.destination-info strong {
+		min-width: auto;
+		display: block;
+		margin-bottom: 4px;
+	}
+
+	.featured-grid {
+		grid-template-columns: 1fr;
+		gap: var(--space-lg);
+	}
+
+	.cta-section {
+		padding: var(--space-lg) var(--space-base);
+	}
+
+	.about-section {
+		padding: var(--space-lg) var(--space-base);
+	}
+}
+
+@media (max-width: 480px) {
+	header {
+		padding: var(--space-lg) var(--space-sm);
+	}
+
+	header h1 {
+		font-size: 20px;
+	}
+
+	nav {
+		flex-direction: column;
+		gap: var(--space-sm);
+	}
+
+	nav a {
+		width: 100%;
+		text-align: center;
+		padding: var(--space-base) var(--space-sm);
+	}
+
+	main {
+		padding: var(--space-lg) var(--space-sm);
+	}
+
+	main > div:nth-child(4),
+	main > div:nth-child(6),
+	main > div:nth-child(8) {
+		padding: var(--space-lg) var(--space-md);
+	}
+
+	.about-section {
+		padding: var(--space-lg) var(--space-md);
+	}
+
+	.destination-info {
+		padding: var(--space-lg) var(--space-md);
+	}
+
+	.attractions {
+		padding: var(--space-lg) var(--space-md);
+	}
+}
+
+/* ============================================================================
+   ACCESSIBILITY
+   ============================================================================ 
+*/
+
+/* Focus states for keyboard navigation */
+a:focus-visible,
+button:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
