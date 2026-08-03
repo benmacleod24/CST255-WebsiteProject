@@ -1045,3 +1045,127 @@ button:focus-visible {
 	outline: 2px solid var(--color-primary);
 	outline-offset: 2px;
 }
+
+/* ============================================================================
+   INTERACTIVE ELEMENTS - Buttons, Forms, Newsletter
+   ============================================================================
+*/
+button {
+	background-color: var(--color-primary);
+	color: white;
+	border: none;
+	padding: var(--space-sm) var(--space-lg);
+	border-radius: var(--radius-sm);
+	font-size: var(--font-size-body-md);
+	font-weight: var(--font-weight-semi-bold);
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+	font-family: var(--font-family-base);
+}
+
+button:hover {
+	background-color: var(--color-primary-active);
+}
+
+button:active {
+	transform: scale(0.98);
+}
+
+.toggle-btn,
+.toggle-attractions-btn,
+.cycle-image-btn {
+	display: block;
+	margin: var(--space-md) 0;
+}
+
+.card-details {
+	margin: var(--space-md) 0;
+	padding: var(--space-md);
+	background-color: rgba(255, 56, 92, 0.05);
+	border-radius: var(--radius-sm);
+	border-left: 3px solid var(--color-primary);
+}
+
+.card-details ul {
+	margin-left: var(--space-xl);
+	margin-bottom: 0;
+}
+
+.card-details li {
+	margin-bottom: var(--space-sm);
+}
+
+/* Newsletter Section */
+.newsletter-section {
+	background: linear-gradient(135deg, rgba(255, 56, 92, 0.1) 0%, rgba(255, 56, 92, 0.05) 100%);
+	padding: var(--space-xl) var(--space-lg);
+	border-radius: var(--radius-md);
+	border: 1px solid var(--color-hairline);
+	margin-bottom: var(--space-section);
+	text-align: center;
+}
+
+.newsletter-section h2 {
+	margin-top: 0;
+	color: var(--color-ink);
+	margin-bottom: var(--space-md);
+}
+
+.newsletter-section p {
+	margin-bottom: var(--space-lg);
+	color: var(--color-body);
+}
+
+#newsletter-form {
+	display: flex;
+	gap: var(--space-md);
+	max-width: 500px;
+	margin: 0 auto;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#newsletter-email {
+	flex: 1;
+	min-width: 200px;
+	padding: var(--space-sm) var(--space-md);
+	border: 1px solid var(--color-hairline);
+	border-radius: var(--radius-sm);
+	font-size: var(--font-size-body-md);
+	font-family: var(--font-family-base);
+	transition: border-color 0.2s ease-in-out;
+}
+
+#newsletter-email:focus {
+	outline: none;
+	border-color: var(--color-primary);
+}
+
+#newsletter-form button {
+	padding: var(--space-sm) var(--space-xl);
+}
+
+/* Mobile responsive for interactive elements */
+@media (max-width: 768px) {
+	button {
+		padding: var(--space-sm) var(--space-md);
+		font-size: var(--font-size-body-sm);
+	}
+
+	.newsletter-section {
+		padding: var(--space-lg);
+	}
+
+	#newsletter-form {
+		flex-direction: column;
+	}
+
+	#newsletter-email {
+		width: 100%;
+		min-width: unset;
+	}
+
+	#newsletter-form button {
+		width: 100%;
+	}
+}

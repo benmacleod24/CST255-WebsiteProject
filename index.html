@@ -8,6 +8,7 @@
 		/>
 		<title>My Favorite Travel Destinations</title>
 		<link rel="stylesheet" href="styles.css" />
+		<script src="script.js"></script>
 	</head>
 	<body>
 		<header>
@@ -52,6 +53,16 @@
 							beaches, clear blue waters, and vibrant local culture.
 							Perfect for relaxation and water activities.
 						</p>
+						<div class="card-details" style="display: none;">
+							<p><strong>Key Highlights:</strong></p>
+							<ul>
+								<li>Magens Bay - consistently rated world's best beaches</li>
+								<li>Crystal-clear waters perfect for snorkeling</li>
+								<li>Blackbeard's Castle historic lookout tower</li>
+								<li>Laid-back Caribbean atmosphere</li>
+							</ul>
+						</div>
+						<button class="toggle-btn">Show More</button>
 						<p><a href="destinations.html#st" class="card-link">Learn more →</a></p>
 					</article>
 
@@ -62,6 +73,16 @@
 							From ancient ruins to beautiful coastal areas, Mexico
 							offers something for every type of traveler.
 						</p>
+						<div class="card-details" style="display: none;">
+							<p><strong>Key Highlights:</strong></p>
+							<ul>
+								<li>Chichen Itza - magnificent Mayan archaeological site</li>
+								<li>World-renowned culinary traditions</li>
+								<li>Cancun and Playa del Carmen beach resorts</li>
+								<li>Incredibly welcoming people and vibrant culture</li>
+							</ul>
+						</div>
+						<button class="toggle-btn">Show More</button>
 						<p><a href="destinations.html#mx" class="card-link">Learn more →</a></p>
 					</article>
 
@@ -72,6 +93,16 @@
 							colonial architecture, tropical landscapes, and welcoming
 							locals. Great for both adventure and relaxation.
 						</p>
+						<div class="card-details" style="display: none;">
+							<p><strong>Key Highlights:</strong></p>
+							<ul>
+								<li>El Yunque National Forest - lush tropical rainforest</li>
+								<li>Old San Juan - colorful colonial architecture</li>
+								<li>Vieques Bioluminescent Bay - magical glowing waters</li>
+								<li>Blend of Spanish heritage and modern culture</li>
+							</ul>
+						</div>
+						<button class="toggle-btn">Show More</button>
 						<p><a href="destinations.html#pr" class="card-link">Learn more →</a></p>
 					</article>
 				</div>
@@ -85,6 +116,20 @@
 					<a href="destinations.html">Destinations</a>
 					page for more detailed information and photos from my travels.
 				</p>
+			</section>
+
+			<section class="newsletter-section">
+				<h2>Subscribe to Travel Updates</h2>
+				<p>Get tips, stories, and travel inspiration delivered to your inbox!</p>
+				<form id="newsletter-form">
+					<input
+						type="email"
+						id="newsletter-email"
+						placeholder="Enter your email address"
+						required
+					/>
+					<button type="submit">Subscribe</button>
+				</form>
 			</section>
 		</main>
 
